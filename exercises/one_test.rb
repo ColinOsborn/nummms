@@ -1,6 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class OneTest < Minitest::Test
 
@@ -15,7 +16,7 @@ class OneTest < Minitest::Test
   def test_not_even_one_ring
     ornaments = ["bracelet", "anklet", "earring"]
     exactly_one_ring = ornaments.one? do |ornament|
-      # Your code goes here
+      ornament == "ring"
     end
     refute exactly_one_ring
   end

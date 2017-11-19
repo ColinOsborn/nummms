@@ -1,6 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class AllPatternTest < Minitest::Test
 
@@ -17,72 +18,89 @@ class AllPatternTest < Minitest::Test
     numbers = [0, 0, 0, 0, 1, 0, 0, 0]
     all_zeros = true
     numbers.each do |number|
-      # Your code goes here
+      all_zeros = false unless number.zero?
     end
     refute all_zeros
   end
 
   def test_all_gone
-    skip
     words = ["gone", "gone", "gone", "gone", "gone", "gone", "gone"]
     all_gone = true
-    # Your code goes here
+    words.each do |w|
+      all_gone = false unless w == "gone"
+    end
     assert all_gone
   end
 
   def test_not_all_gone
-    skip
     words = ["gone", "gone", "gone", "gone", "gone", "there", "gone", "gone"]
-    # Your code goes here
+    all_gone = true
+    words.each do |w|
+      all_gone = false unless w == "gone"
+    end
     refute all_gone
   end
 
   def test_all_empty
-    skip
     strings = ["", "", "", "", "", "", ""]
-    # Your code goes here
+    all_empty = true
+    strings.each do |string|
+      all_empty = false unless string == ""
+    end
     assert all_empty
   end
 
   def test_not_all_empty
-    skip
     strings = ["", "", "", "full", "", "", ""]
-    # Your code goes here
+    all_empty = true
+    strings.each do |string|
+      all_empty = false unless string == ""
+    end
     refute all_empty
   end
 
   def test_not_all_uppercase
-    skip
     words = ["DOUGHNUT", "CASH", "MAIN", "bOWl", "SMACK", "SAND"]
-    # Your code goes here
+    all_caps = false
+    words.each do |w|
+      all_caps = true unless w.upcase
+    end
     refute all_caps
   end
 
   def test_all_lies
-    skip
     lies = [false, false, false, false]
-    # Your code goes here
+    all_lies = true
+    lies.each do |l|
+      all_lies = true unless l == false
+    end
     assert all_lies
   end
 
   def test_all_multiples_of_7
-    skip
     numbers = [42, 14, 35, 49, 28, 56, 21, 7]
-    # Your code goes here
+    all_multiples_of_7 = false
+    numbers.each do |n|
+      all_multiples_of_7 = true unless n % 7 != 0
+    end
     assert all_multiples_of_7
   end
 
   def test_not_all_3_digits_long
-    skip
     numbers = [981, 831, 509, 332, 892, 8999, 110]
-    # Your code goes here
+    all_3_digits = true
+    numbers.each do |num|
+      all_3_digits = false unless num.to_s.length != 3
+    end
     refute all_3_digits
   end
 
   def test_all_4_letter_words
-    skip
     words = ["love", "hate", "fire", "bird", "call"]
-    # Your code goes here
+    all_4_letters = false
+    words.each do |word|
+      all_4_letters = true unless word.length != 4
+    end
     assert all_4_letters
   end
 

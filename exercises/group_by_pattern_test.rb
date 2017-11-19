@@ -1,6 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class GroupByPatternTest < Minitest::Test
 
@@ -18,7 +19,7 @@ class GroupByPatternTest < Minitest::Test
     numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
     odd_and_even = Hash.new {|hash, key| hash[key] = []}
     numbers.each do |number|
-      # Your code goes here
+      odd_and_even[number.odd?] << number
     end
     expected = {1=>[1, 1, 3, 5, 13, 21, 55], 0=>[2, 8, 34]}
     assert_equal expected, odd_and_even

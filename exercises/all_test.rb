@@ -15,43 +15,48 @@ class AllTest < Minitest::Test
   def test_not_all_zeros
     numbers = [0, 0, 0, 0, 1, 0, 0, 0]
     all_zeros = numbers.all? do |number|
-      # Your code goes here
+      number.zero?
     end
     refute all_zeros
   end
 
   def test_all_gone
-    skip
     words = ["gone", "gone", "gone", "gone", "gone", "gone", "gone"]
-    # Your code goes here
+    all_gone = words.all? do |w|
+      w == "gone"
+    end
     assert all_gone
   end
 
   def test_not_all_gone
-    skip
     words = ["gone", "gone", "gone", "gone", "gone", "there", "gone", "gone"]
-    # Your code goes here
+    all_gone = words.all? do |w|
+      w != "gone"
+    end
     refute all_gone
   end
 
   def test_all_empty
-    skip
     strings = ["", "", "", "", "", "", ""]
-    # Your code goes here
+    all_empty = strings.all? do |s|
+      s == ""
+    end
     assert all_empty
   end
 
   def test_not_all_empty
-    skip
     strings = ["", "", "", "full", "", "", ""]
-    # Your code goes here
+    all_empty = strings.all? do |s|
+      s != ""
+    end
     refute all_empty
   end
 
   def test_not_all_uppercase
-    skip
     words = ["DOUGHNUT", "CASH", "MAIN", "bOWl", "SMACK", "SAND"]
-    # Your code goes here
+    all_caps = words.all? do |w|
+      w.upsize
+    end
     refute all_caps
   end
 

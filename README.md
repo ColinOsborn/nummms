@@ -62,11 +62,11 @@ You should perform the exercises in the order below:
 * `reject`
 * `reduce`
 * `any?`
-* `all?`
-* `none?`
-* `one?`
-* `group_by`
-* `zip`
+* `all?`      
+* `none?`     x
+* `one?`      x
+* `group_by`                
+* `zip`                     x
 
 You should perform the pattern test first, and then the test.
 

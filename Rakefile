@@ -1,4 +1,5 @@
 require 'rake/testtask'
+require 'bundle'
 
 Rake::TestTask.new do |t|
   t.pattern = "test/**/*_test.rb"
