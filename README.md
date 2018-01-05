@@ -61,7 +61,7 @@ You should perform the exercises in the order below:
 * `count`
 * `reject`
 * `reduce`
-* `any?`
+* `any?`                    x
 * `all?`                    x
 * `none?`                   x
 * `one?`                    x
