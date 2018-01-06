@@ -61,10 +61,10 @@ You should perform the exercises in the order below:
 * `count`
 * `reject`
 * `reduce`
-* `any?`
-* `all?`      
-* `none?`     x
-* `one?`      x
+* `any?`                    x
+* `all?`                    x
+* `none?`                   x
+* `one?`                    x
 * `group_by`                
 * `zip`                     x
 

@@ -1,6 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class AllTest < Minitest::Test
 
@@ -55,36 +56,40 @@ class AllTest < Minitest::Test
   def test_not_all_uppercase
     words = ["DOUGHNUT", "CASH", "MAIN", "bOWl", "SMACK", "SAND"]
     all_caps = words.all? do |w|
-      w.upsize
+      w.upcase!
     end
     refute all_caps
   end
 
   def test_all_lies
-    skip
     lies = [false, false, false, false]
-    # Your code goes here
+    all_lies = lies.all? do |lie|
+      lie == false
+    end
     assert all_lies
   end
 
   def test_all_multiples_of_7
-    skip
     numbers = [42, 14, 35, 49, 28, 56, 21, 7]
-    # Your code goes here
+    all_multiples_of_7 = numbers.all? do |n|
+      n % 7 == 0
+    end
     assert all_multiples_of_7
   end
 
   def test_not_all_3_digits_long
-    skip
     numbers = [981, 831, 509, 332, 892, 8999, 110]
-    # Your code goes here
+    all_3_digits = numbers.all? do |n|
+      n % 3 == 0
+    end
     refute all_3_digits
   end
 
   def test_all_4_letter_words
-    skip
     words = ["love", "hate", "fire", "bird", "call"]
-    # Your code goes here
+    all_4_letters = words.all? do |w|
+      w.length == 4
+    end
     assert all_4_letters
   end
 
