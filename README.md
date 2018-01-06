@@ -54,7 +54,7 @@ __Recommended Exercise Order__
 
 You should perform the exercises in the order below:
 
-* `map`
+* `map`       x
 * `select`
 * `find` (aka `detect`)
 * `sort_by`
