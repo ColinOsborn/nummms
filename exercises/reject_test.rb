@@ -29,44 +29,50 @@ class RejectTest < Minitest::Test
   end
 
   def test_remove_words_with_more_than_three_letters
-    skip
     words = ["pill", "bad", "finger", "cat", "blue", "dog", "table", "red"]
-    # Your code goes here
+    selected = words.reject do |word|
+      word.length >= 4
+    end
     assert_equal ["bad", "cat", "dog", "red"], selected
   end
 
   def test_remove_words_ending_in_e
-    skip
     words = ["are", "you", "strike", "thinking", "belt", "piece", "warble", "sing", "pipe"]
-    # Your code goes here
+    selected = words.reject do |word|
+      word.end_with?("e")
+    end
     assert_equal ["you", "thinking", "belt", "sing"], selected
   end
 
   def test_remove_words_ending_in_ing
-    skip
     words = ["bring", "finger", "drought", "singing", "bingo", "purposeful"]
-    # Your code goes here
+    selected = words.reject do |word|
+      word.end_with?("ing")
+    end
     assert_equal ["finger", "drought", "bingo", "purposeful"], selected
   end
 
   def test_remove_words_containing_e
-    skip
     words = ["four", "red", "five", "blue", "pizza", "purple"]
-    # Your code goes here
+    selected = words.reject do |word|
+      word.include?("e")
+    end
     assert_equal ["four", "pizza"], selected
   end
 
   def test_remove_dinosaurs
-    skip
     animals = ["tyrannosaurus", "narwhal", "eel", "achillesaurus", "qingxiusaurus"]
-    # Your code goes here
+    notasaurus = animals.reject do |animal|
+      animal.include?("saurus")
+    end
     assert_equal ["narwhal", "eel"], notasaurus
   end
 
   def test_remove_numbers
-    skip
     elements = ["cat", "dog", 23, 81.1, 56, "aimless", 43]
-    # Your code goes here
+    not_numbers = elements.reject do |element|
+      element unless element.is_a(String)?
+    end
     assert_equal ["cat", "dog", "aimless"], not_numbers
   end
 
