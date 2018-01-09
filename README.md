@@ -59,7 +59,7 @@ You should perform the exercises in the order below:
 * `find` (aka `detect`)     x
 * `sort_by`
 * `count`                   x
-* `reject`
+* `reject`                  x
 * `reduce`            
 * `any?`                    x
 * `all?`                    x
