@@ -1,6 +1,8 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
+
 
 class RejectTest < Minitest::Test
 
@@ -71,43 +73,49 @@ class RejectTest < Minitest::Test
   def test_remove_numbers
     elements = ["cat", "dog", 23, 81.1, 56, "aimless", 43]
     not_numbers = elements.reject do |element|
-      element unless element.is_a(String)?
+      element unless element.is_a?(String)
     end
     assert_equal ["cat", "dog", "aimless"], not_numbers
   end
 
   def test_remove_floats
-    skip
     elements = ["cat", "dog", 32.333, 23, 56, "aimless", 43.2]
-    # Your code goes here
+    not_numbers = elements.reject do |element|
+      element if element.is_a?(Float)
+    end
     assert_equal ["cat", "dog", 23, 56, "aimless"], not_numbers
   end
 
   def test_remove_animals_starting_with_vowels
-    skip
     animals = ["aardvark", "bonobo", "cat", "dog", "elephant"]
-    # Your code goes here
+    remaining = animals.reject do |animal|
+      animal if animal.start_with?("a", "e", "i")
+    end
     assert_equal ["bonobo", "cat", "dog"], remaining
   end
 
   def test_remove_capitalized_words
     skip
     words = ["CAT", "dog", "AIMLESS", "Trevor", "butter"]
-    # Your code goes here
+    remaining = words.reject do |caps|
+      caps unless caps.upcase
+    end
     assert_equal ["dog", "Trevor", "butter"], remaining
   end
 
   def test_remove_arrays
-    skip
     elements = ["CAT", ["dog"], 23, [56, 3, 8], "AIMLESS", 43, "butter"]
-    # Your code goes here
+    remaining = elements.reject do |element|
+      element if element.is_a?(Array)
+    end
     assert_equal ["CAT", 23, "AIMLESS", 43, "butter"], remaining
   end
 
   def test_remove_hashes
-    skip
     elements = ["cat", {:dog=>"fido"}, 23, {:stuff=>"things"}, "aimless", 43]
-    # Your code goes here
+    remaining = elements.reject do |element|
+      element if element.is_a?(Hash)
+    end
     assert_equal ["cat", 23, "aimless", 43], remaining
   end
 
