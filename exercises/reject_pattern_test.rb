@@ -121,6 +121,7 @@ class RejectPatternTest < Minitest::Test
     remaining = []
     elements.each do |element|
       remaining << element unless element.
+    end
     assert_equal ["CAT", 23, "AIMLESS", 43, "butter"], remaining
   end
 
