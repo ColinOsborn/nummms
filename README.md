@@ -60,7 +60,7 @@ You should perform the exercises in the order below:
 * `sort_by`
 * `count`
 * `reject`
-* `reduce`
+* `reduce`            
 * `any?`                    x
 * `all?`                    x
 * `none?`                   x
