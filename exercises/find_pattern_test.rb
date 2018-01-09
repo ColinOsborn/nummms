@@ -1,7 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'pry'
+
 
 class FindPatternTest < Minitest::Test
 
@@ -121,7 +121,7 @@ class FindPatternTest < Minitest::Test
         found = num
         break
       end
-    end 
+    end
     assert_equal 21, found
   end
 
